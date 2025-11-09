@@ -121,21 +121,7 @@ def signup_section():
         if register_user(email, hash_password(password)):
             st.success("Account created! You can now login.")
         else:
-            st.error("User already exists.")  
-
-# --- FEATURE PAGES ---
-def feature_cards():
-    st.markdown("### ⚡ Features")
-    col1, col2, col3 = st.columns(3)
-    with col1:
-        if st.button("📑 Upload & Simplify"):
-            st.session_state.current_page = "upload"
-    with col2:
-        if st.button("🚨 Risky Terms Detector"):
-            st.session_state.current_page = "risky_terms"
-    with col3:
-        if st.button("⏳ My History"):
-            st.session_state.current_page = "history"
+            st.error("User already exists.") 
 
 # --- MAIN APP ---
 def app_main():
