@@ -126,7 +126,20 @@ def signup_section():
 # --- MAIN APP ---
 def app_main():
     # Navigation
-    page = st.session_state.get("current_page", "upload")
+    page =    st.subheader("🎛️ Choose LegalLite Mode")
+        col1, col2, col3 = st.columns(3)
+        with col1:
+            if st.button("🧪 Demo Mode"):
+                st.session_state.mode = "Demo"
+                st.session_state.mode_chosen = True
+        with col2:
+            if st.button("🔐 OpenAI API Key"):
+                st.session_state.mode = "OpenAI"
+                st.session_state.mode_chosen = True
+        with col3:
+            if st.button("🌐 Hugging Face"):
+                st.session_state.mode = "HuggingFace"
+                st.session_state.mode_chosen = True
     
     if page == "profile":
         st.subheader("👤 Your Profile")
