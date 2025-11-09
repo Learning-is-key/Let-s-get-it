@@ -213,7 +213,6 @@ else:
                 st.session_state.mode = "HuggingFace"
                 st.session_state.mode_chosen = True
     else:
-        feature_cards()
         app_main()
 
 # --- FOOTER ---
